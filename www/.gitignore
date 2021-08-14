@@ -1,0 +1,7 @@
+.vscode
+openheartwebsite/__pycache__
+openheartwebsite/database.db
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

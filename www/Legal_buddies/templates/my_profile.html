@@ -1,0 +1,105 @@
+
+
+{% extends "base.html" %} 
+{% block title %} 
+
+                    My_profile
+
+
+{% endblock %} 
+
+
+{% block content%}
+
+           
+            {% for profile in current_user_profile %}
+
+                {%if profile.u_type != type %}
+                            <div>
+                            <img id="mainlogo2" src= "static/img/logo.png"/>
+                            <h4 id = "usertype">{{profile.u_type}} Profile </h4>
+                            </div>
+                            <div class: "prof">
+                            {% if profile.u_type == 'Lawyer' %}
+                              <img class ="adjust" src="../static/img/{{profile.u_img}}"/> 
+                              <h5 id = "trt">Click below if you do not want your profile to be displayed</h5>
+                              <br>
+                              <label class="switch"> 
+                              <input type="checkbox">
+                              <span class="slider round"></span>
+                           
+                              </div>
+                            {% endif %}    
+                            {% if profile.u_type == 'User' %}
+                              <img  class ="adjust" src="../static/img/logo.png"/> 
+                            {% endif %}    
+                                        
+                           
+                                        <ul class = "right">
+                                        
+                                        <div >
+
+                                           <div id = "p"><b> Full name:</b> </div>
+                                            <div class = "o">
+                                            
+                                            {{profile.u_full_name}}
+                                            </div>
+                                        </div>
+                                            <div>
+                                            <div id = "p"><b>Email:</b>  </div> 
+                                            <div class = "o"> {{profile.u_email}} </div>
+                                            </div>
+                            
+                                        {% if profile.u_type == 'Lawyer' %}
+                                                        <div > 
+                                                        <div id = "p"><b> Legal Speciality:</b> </div>
+                                                        <div class = "o"> {{profile.u_legalspeciality }}</div>
+                                                        </div>
+                                                        <div>
+                                                        <div id = "p"><b> My Firm: </b> </div>
+                                                         <div class = "o"> {{profile.u_firm }}</div>
+                                                         </div>
+                                                        <div>
+                                                        <div id = "p"><b> My accomplishments: </b> </div>
+                                                         <div class = "o1"> {{profile.u_accomplishment }}</div>
+                                                         </div>
+                                                          <div>
+                                                        <div id = "p"><b> Legal Aid Schemes that I volunteer under: </b> </div>
+                                                         <div class = "o2"> {{profile.u_schemes }}</div>
+                                                         </div>
+                                        {% else %}
+                                                        <div>
+                                                        <div id = "p"><b>Legal Service I am looking for: </b> </div>
+                                                         <div class = "o"> {{profile.u_legalservice }}</div>
+                                                         </div>
+                                                        <div>
+                                                        <div id = "p"><b> Price Range: </b> </div>
+                                                         <div class = "o">{{profile.u_pricerange}}</div>
+                                                         </div>
+                                                       <div>
+                                                       <div id = "p"><b> Case Description: </b> </div>
+                                                         <div class = "o">{{profile.u_description}}</div>
+                                                         </div>
+                                                       
+                                        {% endif %}
+                                        </ul>
+                                        </div>
+                            {% else %}
+
+                            {% endif %}     
+                            </div>
+                             <br>
+                             <br>
+                             <br>
+                             <br>
+                    {% endfor %}
+                       
+          
+
+
+
+
+
+
+
+{% endblock %}

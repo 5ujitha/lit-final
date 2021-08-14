@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+ {% block title %}
+             Pre Sign Up
+ {% endblock %} 
+
+ {% block content %}
+    <img id="mainlogo1" src= "static/img/logo.png"/>
+    <form  method="POST">
+          <h3 id = "usertype" align="center">I am a</h3>
+          <div class="form-groupz">
+
+            <input class="button button1" id="lawyer" name='type' type="radio" value='Lawyer' > 
+            <label for="lawyer">Lawyer</label>
+         
+
+              <input class="button button1" id="user" name='type' type="radio" value='User' > 
+              <label for="user">User</label>
+          </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        
+      </form>
+
+
+    {% endblock %}
+    

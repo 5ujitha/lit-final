@@ -1,0 +1,69 @@
+
+
+{% extends "base.html" %} 
+{% block title %} 
+
+                    Find Your Match
+
+
+{% endblock %} 
+
+
+{% block content%}
+
+
+             <body class = "nic2">
+                <div class = "nic1"><h1 class = "nic"> Find Your Lawyer </h1></div>
+                
+                    <div id="stacked-cards-block" class="stackedcards stackedcards--animatable init"> 
+                            
+                        <div class="stackedcards-container">
+                        {% for profile in current_user_profile %}
+                        {%if profile.u_type == 'Lawyer' %}
+                        
+                            <div class="card-item">
+                            <img class = "lol" src="../static/img/{{profile.u_img}}"/>
+                            <div class = "lawyerinfo">
+                            <br>
+                             <h4><b>{{profile.u_full_name}}</b>({{profile.u_legalspeciality }})</h4>
+                            
+                             <li><b>Law Firm:</b> {{profile.u_firm}}</li>
+                             <br>
+                             <li><b>Profile:</b> {{profile.u_company}}</li>
+                              <br>
+                            <li>{{profile.u_accomplishment}}</li>
+                            <br>
+                            </div>
+                            </div>
+                        {% endif %}          
+                        {% endfor %}
+                        </div>
+
+                        
+
+                        <div class="stackedcards--animatable stackedcards-overlay top">TOP</div>
+                        <div class="stackedcards--animatable stackedcards-overlay right">MATCH</div>
+                        <div class="stackedcards--animatable stackedcards-overlay left">MIS-MATCH</div>
+                    </div>
+                    <div class="global-actions">
+                        <div class="left-action">NO</div>
+                        <div class="right-action"  >
+                            YES
+                        </div>
+              
+                    
+                    </div>  
+                        
+                </body>
+               
+                       
+
+
+
+
+
+
+
+
+
+{% endblock %}

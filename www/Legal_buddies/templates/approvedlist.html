@@ -1,0 +1,23 @@
+{% extends "base.html" %} 
+{% block title %} My Lawyers {% endblock %} 
+{% block content%}
+<h2>Lawyers you have matched with</h2>
+<h4>Hover over the image below to find out more:</h4>
+{% for profile in current_user_profile %}
+{%if profile.u_type == 'Lawyer' %}
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img class = "last" src="../static/img/{{profile.u_img}}" alt="Avatar" style="width:450px;height:450px;">
+    </div>
+    <div class="flip-card-back">
+      <h1>{{profile.u_full_name}}</h1> 
+      <p>{{profile.u_email}}</p> 
+    </div>
+  </div>
+</div>
+
+ {% endif %}          
+{% endfor %}
+{% endblock %}

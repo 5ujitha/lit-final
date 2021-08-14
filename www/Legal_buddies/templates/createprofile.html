@@ -1,0 +1,287 @@
+
+
+{% extends "base.html" %} 
+{% block title %} Create Profile {% endblock %} 
+{% block content%}
+
+<form  method="POST" >
+
+
+
+
+      {% if title == 'Lawyer' %}
+       <div class="form-group">
+        <h2 id = "usertype1">{{title}}</h2>
+        {% if title == 'Lawyer' %}
+        <label for="email">Add Profile Picture</label>
+        {% else %}
+        <br>
+        <label for="email">Add Listing Picture</label>
+        {% endif %}
+        <input 
+        type='file' 
+        name="picture" 
+        id = "picture" 
+        onchange="readURL(this);" />
+        <img 
+        id="blah" 
+        src="#" 
+        alt="your image" />
+    </div>
+
+    <div class="form-group">
+        <label for="email">Please add a picture of your practicing certificate:</label>
+        
+        <input 
+        type='file' 
+        name="picture" 
+        id = "picture" 
+        onchange="readURL(this);" />
+        <img 
+        id="blah" 
+        src="#" 
+        alt="your image" />
+    </div>
+
+
+    <div class="form-group">
+        <label for="full_name">Full Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="user_name"
+          name="user_full_name"
+          placeholder="Enter name"
+        />
+      </div>
+
+ 
+    
+
+    <div class = "form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id = "email" name="user_email" placeholder="xyz@email.com">
+    </div>
+         <div class="form-group" >
+        <label for="firm">Law Firm</label>
+        <input
+          type="text"
+          class="form-control"
+          id="user_firm"
+          name="user_firm"
+          placeholder="Enter law firm (Leave empty if not applicable)"
+        />
+      </div>
+
+
+     <div class="form-group" >
+        <label for="company">Comapany/LinkedIn Profile</label>
+        <input
+          type="text"
+          class="form-control"
+          id="user_company"
+          name="user_company"
+          placeholder="Enter Company/LinkedIn Profile"
+        />
+      </div>
+  
+      <div class="form-group">
+        <label for="accomplishment">Please indicate past cases/achievements:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="user_accomplishment"
+          name="user_accomplishment"
+          placeholder="Past cases/achievements"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="legalspeciality">Legal Speciality</label>
+        <select
+          type="text"
+          class="form-control"
+          id="user_legalspeciality"
+          name="user_legalspeciality"
+          placeholder="Enter skills"
+        > 
+        <option value="nil" selected disabled>Service</option>
+        <option value="civil">Civil</option>
+        <option value="criminal">Criminal</option>
+
+        </select>
+
+      </div>
+
+       <div class="form-group">
+        <label for="schemes">Which Legal Aid Schemes do you volunteer for?</label>
+        <select
+          type="text"
+          class="form-control"
+          id="user_schemes"
+          name="user_schemes"
+          placeholder="Enter legal aid"
+        > 
+          <option value="0" selected disabled>Scheme</option>
+          <option value="Legal aid Bureau (LAB)">Legal aid Bureau (LAB)</option>
+          <option value="Criminal Legal Aid Scheme (CLAS)">Criminal Legal Aid Scheme (CLAS)</option>
+          <option value="Primary Justice Project (PJP)">Primary Justice Project (PJP)</option>
+          <option value="Project Law Help (PLH)">Project Law Help (PLH)</option>
+          <option value="Humanitarian Organization for Migration Economics (HOME)">Humanitarian Organization for Migration Economics (HOME) </option>
+          <option value="Transient Workers Count Too (TWC2)">Transient Workers Count Too (TWC2) </option>
+          <option value="Justice without borders (JWB)">Justice without borders (JWB)</option>
+          <option value="Foreign Domestic Worker Association for Social Support and Training (FAST)">Foreign Domestic Worker Association for Social Support and Training (FAST)</option>
+
+        </select>
+
+      </div>
+   
+      
+    
+
+      {% elif title == 'User' %}
+       
+       <div class="form-group">
+        <h2 id = "usertype">{{title}}</h2>
+      </div>
+
+      
+
+      <div class="form-group">
+        <label for="full_name">Full Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="user_name"
+          name="user_full_name"
+          placeholder="Enter name"
+        />
+      </div>
+
+      <div class = "form-group">
+        <label for="user_email">Email</label>
+        <input type="email" class="form-control" 
+        id = "user_email" name="user_email" placeholder="xyz@email.com">
+    </div>
+
+    <div class="form-group">
+        <label for="description">Description of the case</label>
+        <input
+          type="text"
+          class="form-control"
+          id="user_descriptiom"
+          name="user_description"
+          placeholder="Enter a brief description of your case"
+        />
+      </div>
+    
+
+     <div class="form-group">
+        <label for="represent">Who are you representing?</label>
+        <select
+          type="text"
+          class="form-control"
+          id="user_represent"
+          name="user_represent"
+          placeholder="are you eligible for any legal scheme?"
+        > 
+        <option value="0" selected disabled>Representing</option>
+        <option value="myself">Myself</option>
+        <option value="organisation">Organisation</option>
+
+
+        </select>
+
+      </div>
+
+     <div class="form-group">
+        <label for="legal_service">Legal Service</label>
+        <select
+          type="text"
+          class="form-control"
+          id="user_legalservice"
+          name="user_legalservice"
+          placeholder="Enter Legal Service"
+        > 
+        <option value="nil" selected disabled>Legal Service</option>
+        <option value="civil">Civil</option>
+        <option value="criminal">Criminal</option>
+
+        </select>
+
+      </div>
+
+
+      <input type="radio" name='thing' value='valuable' id="bank" onclick="showBank()">Yes i am under a scheme</input>
+<input type="radio" name='thing' value='valuable' id="school" onclick="showSchool()">No i am not under a scheme</input>
+
+<div id="bankDIV" class="none">
+ <div class="form-group">
+        <label for="schemes">Which Legal Aid Schemes are you eligible for?</label>
+        <select
+          type="text"
+          class="form-control"
+          id="user_schemes"
+          name="user_schemes"
+          placeholder="Enter legal aid"
+        > 
+          <option value="0" selected disabled>Legal Aid Scheme</option>
+          <option value="Legal aid Bureau (LAB)">Legal aid Bureau (LAB)</option>
+          <option value="Criminal Legal Aid Scheme (CLAS)">Criminal Legal Aid Scheme (CLAS)</option>
+          <option value="Primary Justice Project (PJP)">Primary Justice Project (PJP)</option>
+          <option value="Project Law Help (PLH)">Project Law Help (PLH)</option>
+          <option value="Humanitarian Organization for Migration Economics (HOME)">Humanitarian Organization for Migration Economics (HOME) </option>
+          <option value="Transient Workers Count Too (TWC2)">Transient Workers Count Too (TWC2) </option>
+          <option value="Justice without borders (JWB)">Justice without borders (JWB)</option>
+          <option value="Foreign Domestic Worker Association for Social Support and Training (FAST)">Foreign Domestic Worker Association for Social Support and Training (FAST)</option>
+
+        </select>
+
+      </div>
+</div>
+<div id="schoolDIV" class="none">
+    <div>
+      <label for="Price">What price range are you comfortable with for legal fees?:</label>
+       <select
+          type="text"
+          class="form-control"
+          id="user_pricerange"
+          name="user_pricerange"
+          placeholder="Enter legal aid"
+        > 
+          <option value="0" selected disabled>Price</option>
+          <option value="0-1000">$0-$1,000</option>
+          <option value="1001-1500">$1,001-$1,500</option>
+          <option value="1501-1800">$1,501-$1,800</option>
+          <option value="1801-2000">$1,801-$2,000</option>
+          <option value=">2000">above $2,000</option>
+      </select>
+    </div>
+
+</div>
+
+<style> 
+.none { display:none; }, 
+.showDIV { display:block; } 
+</style>
+
+
+     
+      {% endif %}
+
+      <br/>
+      <button type="submit" class="btn btn-primary">Next</button>
+      </form>
+
+
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+
+    {% endblock %}

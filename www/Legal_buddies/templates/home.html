@@ -1,0 +1,70 @@
+{% extends "base.html" %} 
+
+{% block title %}
+
+                    Home
+{% endblock %} 
+
+{% block content
+    %}
+<header class="w3-display-container w3-content w3-wide" id="home">
+  <img id="mainlogo" src= "static/img/logo.png"/>
+  <div class="w3-display-bottomleft  w3-opacity">
+  </div>
+</header>
+
+<!-- Page content -->
+<div class="w3-content" >
+
+  <!-- About Section -->
+  <div class="w3-row row" id="about">
+    <div class="w3-col text m6  w3-hide-small">
+     <img id="lo" src= "static/img/lo.jpg"/>
+     </div>
+     <div class ="text text1">
+      <h1 class="w3-center">About Us</h1><br>
+      <h5 class="w3-center">A new way of helping</h5>
+      <p class="w3-large">Look for <span class="w3-tag w3-light-grey1">lawyers</span> and <span class="w3-tag w3-light-grey1">legal aid schemes.</span> </p>
+      <p class="w3-large w3-text-grey w3-hide-medium">Legal Buddies is an one stop platform for the users looking for lawyers to find what they are looking for in a starightforward way. It allows users to choose their own lawyers at the price that they can afford. Lawyers are able to help out individuals in need easily. So what are you wauting for? Come sign up for Legal Buddies</p>
+    </div>
+  </div>
+  
+  <hr>
+  
+  <!-- Menu Section -->
+  <div class="w3-row macs" id="menu">
+    <div class="w3-col l6">
+      <img id="lo1" src= "static/img/courthouse-6.jpg"/>
+      <h1 class="w3-center">Our Services</h1><br>
+      <h4>Find A Lawyer</h4>
+      <p class="w3-text-grey">Based on what scheme you qualify for, you can select through wide range of lawyers who specialises in various legal sectors to help you solve your issues.</p>
+      <br>
+    
+      <h4>Find Legal Aid</h4>
+      <p class="w3-text-grey">Dont know which scheme you qualify for? Click on the Legal Aid Scheme tab to find out more</p>
+      <p class="w3-text-grey">Dont qualify for a legal scheme? No worries, click on the Lawyer's fees tab to find out the typical price ranges of lawyers.</p>
+      <br>
+
+    
+      
+    </div>
+    
+  </div>
+
+  <hr>
+
+  <!-- Contact Section -->
+
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey">
+    <h3>Contact</h3>
+    Do not hesitate to contact us if any error is faced.
+   <div> <b>lawbuddy@email.com</b></div>
+     You can also contact us by phone 00553123-2323 or you can send us a message here:@ababa
+</footer>
+
+
+{% endblock %}
